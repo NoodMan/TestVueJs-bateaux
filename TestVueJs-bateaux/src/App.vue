@@ -8,17 +8,19 @@ import HelloWorld from "@/components/HelloWorld.vue";
     <img
       alt="Vue logo"
       class="logo"
-      src="@/assets/logo.svg"
+      src="https://upload.wikimedia.org/wikipedia/commons/f/fd/RMS_Titanic_3.jpg"
       width="125"
       height="125"
     />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <center>
+        <h1>Boat manager</h1>
+      </center>
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/add">LookBoat <span class="material-icons"> sailing </span></RouterLink> 
+        <RouterLink to="/look">List boat</RouterLink>
       </nav>
     </div>
   </header>
