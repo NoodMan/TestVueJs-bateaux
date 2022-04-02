@@ -23,12 +23,13 @@
             type="number"
             name="taille"
             id="taille"
-            placeholder="taille baot en m"
+            placeholder="taille boat en m"
             min="40"
-            max="20000"
+            max="5000"
             v-model="boat.taille"
           />
         </div>
+        <br>
           <div class="input-group">
           <label for="owner"> Owner</label>
 
@@ -36,11 +37,12 @@
             type="string"
             name="owner"
             id="owner"
-            placeholder="Owner baot"
+            placeholder="Owner boat"
            
             v-model="boat.owner"
           />
         </div>
+        <br>
            <div class="input-group">
           <label for="price"> Price</label>
 
@@ -49,7 +51,7 @@
             name="price"
             id="price"
             placeholder="boat price"
-            min="0"
+            min="500"
             v-model="boat.price"
           />
         </div>
@@ -57,31 +59,32 @@
         <br />
         <center>
          
-          <input type="submit" value="Record data" />
+          <input type="submit" value="Record boat" />
         </center>
         <br /><br />
       </form>
     </div>
 
-    <ListBoat />
     
+   
+
   </div>
 </template>
 
 <script setup>
 import { reactive } from "@vue/reactivity"
-import { useBoatsStore } from "../stores/boat"
-import  ListBoat from "../components/ListBoat.vue"
+import { useBoatsStore } from "../stores/storeboat"
+import  ListBoat from "./ListBoat.vue"
 
-const store = useBoatsStore()
-const boat = reactive({
+const store = useBoatsStore() // useBoatsStore devient store
+const boat = reactive({ // reactive devient une tableau de boat
     name: "",
     taille: 0, 
     owner: "",
     price: 0,
 })
 
-function addBoat() {
+function addBoat() { // fonction pour enregistrer les boat du form dans le store
 store.boats.push(boat) 
 }
 

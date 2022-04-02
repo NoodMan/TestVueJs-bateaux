@@ -19,8 +19,13 @@ import HelloWorld from "@/components/HelloWorld.vue";
       </center>
 
       <nav>
-        <RouterLink to="/add">LookBoat <span class="material-icons"> sailing </span></RouterLink> 
-        <RouterLink to="/look">List boat</RouterLink>
+        <RouterLink to="/add"
+          >Add Boat <span class="material-icons"> sailing </span>
+        </RouterLink>
+        <RouterLink to="/look"
+          >Look Money Boat
+        </RouterLink
+        >
       </nav>
     </div>
   </header>

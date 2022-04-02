@@ -7,12 +7,12 @@ const router = createRouter({
  
     {
       path: "/add",
-      name: "home",
-      component: () => import("../views/BoatView.vue"),
+      name: "add",
+      component: () => import("../views/AddBoatView.vue"),
     },
     {
       path: "/look",
-      name: "home",
+      name: "list",
       component: () => import("../views/ListView.vue"),
     },
   ],

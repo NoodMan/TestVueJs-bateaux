@@ -1,11 +1,20 @@
-<script setup>
-import ListBoat from "../components/FormBoat.vue";
-</script>
 
 <template>
     <div>
-        <center><h1>Liste boat</h1></center>
+        <center><h1>Listlkmijhgjke boat</h1></center>
         <br>
-        <FormBoat />
+        <ListBoat />
     </div>
 </template>
+
+
+
+<script>
+import ListBoat from "../components/ListBoat.vue";
+export default {
+  components: {
+    ListBoat,
+  },
+};
+</script>
+
