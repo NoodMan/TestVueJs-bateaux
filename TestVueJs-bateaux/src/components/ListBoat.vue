@@ -1,31 +1,40 @@
 <template>
-  <table>
-    <thead>
-      <tr>
-        <th>Boat</th>
-        <th>Owner</th>
-        <th>Profitability</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!--on boucle sur la liste useBoatsStore sur chaque objet boat => 1 ligne par bateau-->
-      <tr v-for=" m_b in money_boats" :key="m_b.id">
-        <th>{{m_b.name}}</th>
-        <th>{{m_b.owner}}</th>
-        <th>{{m_b.profitability}}</th>
-      </tr>
-      
- <td>{{ }} </td>
-   
+  <center>
+    <br />
 
+    <div class="card" style="">
+      <br />
 
-    </tbody>
-         <ListBoat />
-  </table>
+      <table class="table">
+        <tr>
+          <th scope="col">
+           Boat
+          </th>
+          <th scope="col">
+           Owner
+          </th>
+          <th scope="col">
+            Profitability
+          </th>
+        </tr>
+
+        <tbody>
+          <tr>
+            <td>{{ store.name }}</td>
+            <td>{{ store.owner }}</td>
+            <td class="table-active">{{ store.profitability }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+    </div>
+  </center>
+ 
 </template>
 
 <script setup>
-import { onMounted } from "@vue/runtime-core"
+//pour pouvoir utiliser les données du store
 import { useBoatsStore } from "../stores/storeboat"
-onMounted
+//et ne pas oublierle const
+const store = useBoatsStore();
 </script>
