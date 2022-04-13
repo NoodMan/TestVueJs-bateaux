@@ -77,6 +77,11 @@ import { useBoatsStore } from "../stores/storeboat"
 import  ListBoat from "./ListBoat.vue"
 
 const store = useBoatsStore() // useBoatsStore devient store
+
+/**Ici la constante boat est une propriété réactive de ton composant AddBoat .
+Sa valeur est, selon comment tu l'as déclaré, un objet avec 4 cléfs ,name, taille, owner et price.
+Ta constante boat est donc maintenant une propriété dont tu peux synchroniser la valeur avec un champ input par exemple.
+*/
 const boat = reactive({ // reactive devient une tableau de boat
     name: "",
     taille: 0, 
