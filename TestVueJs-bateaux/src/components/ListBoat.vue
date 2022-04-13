@@ -3,6 +3,7 @@
     <br />
 
     <div class="card" style="">
+      <form @submit.prevent="listBoat">
       <br />
 
       <table class="table">
@@ -20,9 +21,9 @@
 
         <tbody>
           <tr v-for="g_b in profitability" :key="g_b">>
-            <td>{{ boat.name }}</td>
-            <td>{{ boat.owner }}</td>
-            <td class="table-active">{{ boat.profitability }}</td>
+            <td>{{ g_b.name }}</td>
+            <td>{{ g_b.owner }}</td>
+            <td class="table-active">{{ g_b.profitability }}</td>
           </tr>
         </tbody>
       </table>
@@ -43,16 +44,22 @@
 
 import { mapWritableState } from "pinia";
 import { useBoatsStore } from "../stores/storeboat"
+import { ListBoat} from "../views/ListView.vue"
 
 export default {
   computed: {
     ...mapWritableState(useBoatsStore, {
       profitability: "getBoats",
      
-    }),
-  },
-};
+    })
+},
 
+};
+  function listBoat() { // fonction pour enregistrer les boat du form dans le store
+store.boats.push(boat) 
+
+
+  }
 
 
 </script>

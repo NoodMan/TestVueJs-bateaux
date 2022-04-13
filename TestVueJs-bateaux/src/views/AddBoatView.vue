@@ -7,5 +7,6 @@ import AddBoat from "../components/AddBoat.vue";
     <center><h1>Add boat</h1></center>
     <br />
     <AddBoat />
+    
   </div>
 </template>

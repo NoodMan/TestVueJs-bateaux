@@ -2,8 +2,8 @@
   <div>
   
     <br />
-    <div class="d-flex flex-column align-items-center">
       <form @submit.prevent="addBoat">
+       <div class="d-flex flex-column align-items-center">
         <div>
           <label for="name">Name</label>
 
@@ -61,9 +61,9 @@
          
           <input type="submit" value="Record boat" />
         </center>
-        <br /><br />
-      </form>
+        <br />
     </div>
+      </form>
 
     
    
@@ -72,20 +72,21 @@
 </template>
 
 <script setup>
-import { reactive } from "@vue/reactivity"
-import { useBoatsStore } from "../stores/storeboat"
-import  ListBoat from "./ListBoat.vue"
+import { reactive } from "@vue/reactivity";
+import { useBoatsStore } from "../stores/storeboat";
+import ListBoat from "./ListBoat.vue";
 
-const store = useBoatsStore() // useBoatsStore devient store
-const boat = reactive({ // reactive devient une tableau de boat
-    name: "",
-    taille: 0, 
-    owner: "",
-    price: 0,
-})
+const store = useBoatsStore(); // useBoatsStore devient store
+const boat = reactive({
+  // reactive devient une tableau de boat
+  name: "",
+  taille: 0,
+  owner: "",
+  price: 0,
+});
 
-function addBoat() { // fonction pour enregistrer les boat du form dans le store
-store.boats.push(boat) 
+function addBoat() {
+  // fonction pour enregistrer les boat du form dans le store
+  store.boats.push(boat);
 }
-
 </script>
